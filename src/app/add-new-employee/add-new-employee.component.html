@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+    <div class="col-6 card py-2 mt-5" id="newemployee">
+        <h3 class="text-center">Add new employee</h3>
+        <form [formGroup]="empcontrol" (ngSubmit)="addEmployee()" action="">
+            <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Employee's id" id="" formControlName="emp_id">           
+                <div *ngIf="!empcontrol.controls.emp_id.valid && (empcontrol.controls.emp_id.dirty||empcontrol.controls.emp_id.touched)">
+                    This id already exists.
+                </div>
+            </div>
+              
+            <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Employee's name" id="" formControlName="name">           
+                <div *ngIf="!empcontrol.controls.name.valid && (empcontrol.controls.name.dirty||empcontrol.controls.name.touched)">
+                    This name is too small <br> (name minimum length : 3)
+                </div>
+            </div>    
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Employee's email" id="" formControlName="email">
+            </div>
+            <div class="btn-group form-group">
+                <button [disabled]="!empcontrol.valid" type="submit" class="btn btn-success">Submit</button>
+                <button (click)="formReset()" type="button" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
+<app-empreginstructions></app-empreginstructions>
