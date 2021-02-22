@@ -1,7 +1,10 @@
-<div class="row justify-content-center">
-    <div class="col-6 card py-2 mt-5" id="newemployee">
-        <h3 class="text-center">Add new employee</h3>
-        <form [formGroup]="empcontrol" (ngSubmit)="addEmployee()" action="">
+<div class="row justify-content-center" id="newempcomp">
+    <div class="col-4 mt-5">
+        <app-empreginstructions></app-empreginstructions>
+    </div>
+    <div class="col-7 py-2 mt-5" id="empformcard">
+        <h3 class="text-center m-3">Add new employee</h3>
+        <form [formGroup]="empcontrol" (ngSubmit)="addEmployee()" action="" style="height:max-content;">
             <div class="form-group">
                 <input class="form-control" type="text" name="name" placeholder="Employee's id" id="" formControlName="emp_id">           
                 <div *ngIf="!empcontrol.controls.emp_id.valid && (empcontrol.controls.emp_id.dirty||empcontrol.controls.emp_id.touched)">
@@ -25,4 +28,3 @@
         </form>
     </div>
 </div>
-<app-empreginstructions></app-empreginstructions>

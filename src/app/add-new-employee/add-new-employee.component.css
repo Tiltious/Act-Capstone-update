@@ -1,0 +1,9 @@
+#newempcomp{
+    height:1000px;
+}
+#empformcard{
+    height: fit-content;
+    color: seashell;
+    background-color:rgba(148, 245, 245, 0.459);
+    border-radius: 1%;
+}

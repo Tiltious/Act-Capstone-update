@@ -11,6 +11,8 @@ import { EmployeesService } from './employees.service';
 import { DevicesService } from './devices.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmpreginstructionsComponent } from './add-new-employee/empreginstructions/empreginstructions.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { SideBarComponent } from './employee-details/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { EmpreginstructionsComponent } from './add-new-employee/empreginstructio
     HeaderComponent,
     MainComponent,
     AddNewEmployeeComponent,
-    EmpreginstructionsComponent
+    EmpreginstructionsComponent,
+    EmployeeDetailsComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
