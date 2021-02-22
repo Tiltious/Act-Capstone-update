@@ -1,0 +1,15 @@
+.jumbotron{
+    background-color: rgba(148, 245, 245, 0.459);
+    text-align: center;
+}
+
+#app-instructions{
+    color: seashell;
+}
+.display-1{
+    transition: 0.6s;
+}
+.display-1:hover{
+    cursor:default;
+    text-shadow: 0px 10px 15px black;
+}
