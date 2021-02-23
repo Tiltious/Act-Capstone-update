@@ -1,6 +1,6 @@
 <div class="vertical-menu" id="sidebar">
     <ul class="list-group">
-        <li *ngFor="let emp of myemployees" class="list-group-item">
+        <li *ngFor="let emp of myemployees"(click)="sendemployee(emp)" class="list-group-item">
             {{emp.name}}
         </li>
     </ul>            

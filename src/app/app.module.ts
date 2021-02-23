@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EmpreginstructionsComponent } from './add-new-employee/empreginstructions/empreginstructions.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { SideBarComponent } from './employee-details/side-bar/side-bar.component';
+import { MainDetailsComponent } from './employee-details/main-details/main-details.component';
+import { DeventryformComponent } from './employee-details/main-details/deventryform/deventryform.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SideBarComponent } from './employee-details/side-bar/side-bar.component
     AddNewEmployeeComponent,
     EmpreginstructionsComponent,
     EmployeeDetailsComponent,
-    SideBarComponent
+    SideBarComponent,
+    MainDetailsComponent,
+    DeventryformComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+<div>
+    <h1>Fleet Management</h1>
+</div>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <app-deventryform #deventry [emp]="myemployees"></app-deventryform>
+        </div>
+    </div>
+</div>
+<ul class="list-group">
+    <li *ngFor="let b of back" class="list-group-item text-center">
+        {{deventry.mydevices[b].description}}--{{deventry.mydevices[b].type}} <br>
+        <div *ngIf="btntoogle" class="btn-group">
+            <button (click)="sendDevice(deventry.mydevices[b]);devupdate.updatetoggle=!devupdate.updatetoggle" class="btn btn-primary btn-sm">Update</button>
+            <button (click)="sendDevice(deventry.mydevices[b])" data-toggle="modal" data-target="#devsafetyalert"  class="btn btn-danger btn-sm">Delete</button>
+        </div>
+    </li>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add New Device
+</button>
+</ul>
