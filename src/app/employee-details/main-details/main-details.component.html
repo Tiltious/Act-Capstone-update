@@ -1,6 +1,6 @@
-<div>
+<header class="">
     <h1>Fleet Management</h1>
-</div>
+</header>
 <div class="modal" id="deventry">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -11,19 +11,39 @@
 <div class="modal" id="devupdate">
     <div class="modal-dialog">
         <div class="modal-content">
-            <app-devupdateform></app-devupdateform>
+            <app-devupdateform #devupdate></app-devupdateform>
         </div>
     </div>
 </div>
-<ul class="list-group">
-    <li *ngFor="let b of back" class="list-group-item text-center">
-        {{deventry.mydevices[b].description}}--{{deventry.mydevices[b].type}} <br>
-        <div class="btn-group">
-            <button (click)="sendDevice(deventry.mydevices[b])" data-toggle="modal" data-target="#devupdate" class="btn btn-primary btn-sm">Update</button>
-            <button (click)="sendDevice(deventry.mydevices[b])" class="btn btn-danger btn-sm">Delete</button>
+<div class="card">
+    <div class="card-header">
+        <h4>{{myemployees.name}}</h4>
+        <p>email: {{myemployees.email}}<br>id: {{myemployees.emp_id}}</p>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li *ngFor="let b of back" class="list-group-item text-center">
+                {{deventry.mydevices[b].description}}--{{deventry.mydevices[b].type}} <br>
+                <div class="btn-group">
+                    <button (click)="sendDevice(deventry.mydevices[b])" data-toggle="modal" data-target="#devupdate" class="btn btn-primary btn-sm">Update</button>
+                    <button (click)="sendDevice(deventry.mydevices[b])" data-toggle="modal" data-target="#delconf"class="btn btn-danger btn-sm">Delete</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deventry">
+            Add New Device
+        </button>
+    </div>
+
+</div>
+
+
+<div class="modal" id="delconf">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <app-delete-confirmation [deldev]="devupdate.mydev.id"></app-delete-confirmation>
         </div>
-    </li>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deventry">
-    Add New Device
-</button>
-</ul>
+    </div>
+</div>

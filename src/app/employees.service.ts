@@ -21,7 +21,7 @@ export class EmployeesService {
         }),1)
         let newemp=new Employees(data.id,value.emp_id,value.name,value.email)
         this.myemployees.push(newemp)
-        //this.selectedemp.emit(newemp)
+        this.selectedemp.emit(newemp)
       }
     )
   }
@@ -31,7 +31,7 @@ export class EmployeesService {
         this.myemployees.splice(this.myemployees.findIndex(function(employee){          
           return employee.id===id
         }),1)
-        //this.selectedemp.emit(this.myemployees[0])
+        this.selectedemp.emit(this.myemployees[0])
         console.log(this.myemployees[0])
       }
     )

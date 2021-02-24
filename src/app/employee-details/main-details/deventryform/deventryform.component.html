@@ -3,8 +3,8 @@
         <div class="form-group close-btn">
             <button (click)="formReset()"data-dismiss="modal" class="btn btn-lg">&times;</button>
         </div>
-        <h3 class="modal-header">Add New Device</h3>
         <form [formGroup]="devcontrols" (ngSubmit)="addDevice(emp)" action="" class="modal-body">
+            <h3 class="modal-header">Add New Device</h3>
             <div class="form-group">
                 <input class="form-control" type="text" name="sn" id="" placeholder="Serial number" formControlName="sn">
                 <div *ngIf="!devcontrols.controls.sn.valid && (devcontrols.controls.sn.dirty||devcontrols.controls.sn.touched)">

@@ -21,7 +21,6 @@ export class DeventryformComponent implements OnInit {
   ) { }
     
   addDevice(emp:any){
-    console.log('gamw')
     this.devservice.publishDevice(this.devcontrols.value,emp)
     this.formReset()
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Employees } from 'src/app/employees';
 import { EmployeesService } from 'src/app/employees.service';
 
@@ -8,6 +8,7 @@ import { EmployeesService } from 'src/app/employees.service';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
+  
   myemployees:any
   constructor(private employee:EmployeesService) { }
 

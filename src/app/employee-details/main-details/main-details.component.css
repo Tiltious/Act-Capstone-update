@@ -1,3 +1,21 @@
 .modal-content{
     background-color:rgb(91, 155, 155);
 }
+.card{
+    background-color: rgba(91, 155, 155, 0.301);
+}
+.card-header,.card-footer,.card-header h4{
+    color: seashell;
+    background-color:rgb(91, 155, 155);
+    font-weight: bold;
+    text-align: center
+
+}
+.card-body li{
+    background-color: rgb(171, 214, 214);
+}
+header{
+    color: seashell;
+    font-weight: bold;
+    text-align: center
+}

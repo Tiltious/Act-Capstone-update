@@ -1,3 +1,14 @@
 .vertical-menu li{
+    color: seashell;
     background-color:rgba(148, 245, 245, 0.459);
+    font-weight: bold;
+    transition: 0.2s;
+}
+.vertical-menu li:hover{
+    cursor: pointer;
+    text-shadow: -1px 2px 2px   rgb(38, 65, 65);
+}
+h3{
+    color: seashell;
+    font-weight: bold;
 }

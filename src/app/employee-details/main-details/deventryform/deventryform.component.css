@@ -1,4 +1,5 @@
 .close-btn{
+    z-index: 2;
     position:absolute;
     top: 4%;
     right: 5%;

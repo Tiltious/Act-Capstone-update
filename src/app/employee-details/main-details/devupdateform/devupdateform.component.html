@@ -1,7 +1,10 @@
 <div class="row justify-content-center mt-0">
-    <div class="col card pt-2" id="devupdatecard">
-        <h3>Edit Device</h3>
-        <form *ngIf="updatetoggle" [formGroup]="devcontrol" (ngSubmit)="editDevice(mydev)" action="">
+    <div class="col pt-2" id="devupdatecard">
+        <div class="form-group close-btn">
+            <button (click)="formReset()"data-dismiss="modal" class="btn btn-lg">&times;</button>
+        </div>
+        <form *ngIf="updatetoggle" [formGroup]="devcontrol" (ngSubmit)="editDevice(mydev)" action="" class=" modal-body">
+            <h3 class="modal-header">Edit Device</h3>
             <div class="form-group">
                 <p>You must update device's serial-number to continue</p>
                 <input class="form-control" type="text" name="sn" id="" placeholder="Device's serial number" formControlName="sn">
@@ -15,12 +18,9 @@
             <div class="form-group">
                 <input class="form-control" type="text" name="type" id="" placeholder="Device's type" formControlName="type">
             </div>
-            <div class="btn-group form-group">
+            <div class="btn-group  modal-footer">
                 <button data-toggle="modal" data-target="#refmodal" type="submit" class="btn btn-success">Submit</button>
                 <button (click)="formReset()" type="button" class="btn btn-secondary">Reset</button>
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-danger btn-sm">close</button>
             </div>
         </form>
     </div>
