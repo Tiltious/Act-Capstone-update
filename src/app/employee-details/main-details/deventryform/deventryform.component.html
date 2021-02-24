@@ -1,25 +1,25 @@
-<div class="row justify-content-center mt-0">
-    <div class="col card pt-2" id="deventrycard">
-        <h3>Add New Device</h3>
-        <form  [formGroup]="devcontrols" (ngSubmit)="addDevice(emp)" action="">
+<div class="row mt-0" >
+    <div class="col pt-2" id="deventrycard">
+        <div class="form-group close-btn">
+            <button (click)="formReset()"data-dismiss="modal" class="btn btn-lg">&times;</button>
+        </div>
+        <h3 class="modal-header">Add New Device</h3>
+        <form [formGroup]="devcontrols" (ngSubmit)="addDevice(emp)" action="" class="modal-body">
             <div class="form-group">
-                <input class="form-control" type="text" name="sn" id="" placeholder="Device's serial number" formControlName="sn">
+                <input class="form-control" type="text" name="sn" id="" placeholder="Serial number" formControlName="sn">
                 <div *ngIf="!devcontrols.controls.sn.valid && (devcontrols.controls.sn.dirty||devcontrols.controls.sn.touched)">
                     This sn already exists
                 </div>
             </div>    
             <div class="form-group">
-                <input class="form-control" type="text" name="description" id="" placeholder="Device's description" formControlName="description">
+                <input class="form-control" type="text" name="description" id="" placeholder="Description" formControlName="description">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" name="type" id="" placeholder="Device's type" formControlName="type">
+                <input class="form-control" type="text" name="type" id="" placeholder="Type" formControlName="type">
             </div>
-            <div class="btn-group form-group">
+            <div class="btn-group modal-footer">
                 <button [disabled]="!devcontrols.valid" type="submit" class="btn btn-success">Submit</button>
-                <button (click)="formReset()" type="button" class="btn btn-secondary">Reset</button>
-            </div>
-            <div class="form-group">
-                <button (click)="formReset()" type="button" class="btn btn-danger btn-sm">close</button>
+                <button (click)="formReset()"type="button" class="btn btn-secondary">Reset</button>
             </div>
         </form>
     </div>

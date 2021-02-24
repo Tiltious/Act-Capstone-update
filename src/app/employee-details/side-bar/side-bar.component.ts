@@ -15,7 +15,7 @@ export class SideBarComponent implements OnInit {
     this.employee.selectedemp.emit(employee)
   }
   ngOnInit(): void {
-    this.myemployees=this.employee.myemployees
+    this.myemployees=this.employee.myemployees 
   }
 
 }

@@ -22,8 +22,7 @@ export class DevicesService {
       for(let key in devices){
         this.mydevices.push(
           new Devices(key,devices[key].sn,devices[key].description,devices[key].type)
-        )
-      }
+        )}
       this.selecteddev.emit(this.mydevices[0])
     })
   }
@@ -33,7 +32,9 @@ export class DevicesService {
         for(let key in devassignments){
           this.assignments.push(
             new DeviceAssignments(key,devassignments[key].employee_id,devassignments[key].device_id)
-          )}
+          )
+          console.log("ok publishAssignment()")}
+          this.selectedassign.emit(this.assignments[0])
       })
   }
   publishDevice(value:any,emp:any){
