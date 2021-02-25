@@ -8,7 +8,8 @@
     color: seashell;
     background-color:rgb(91, 155, 155);
     font-weight: bold;
-    text-align: center
+    text-align: center;
+    transition: 0.2s;
 
 }
 .card-body li{
@@ -18,4 +19,8 @@ header{
     color: seashell;
     font-weight: bold;
     text-align: center
+}
+.card-header h4:hover{
+    cursor: pointer;
+    text-shadow: 1px 2px 2px rgb(38, 65, 65);
 }

@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+    <div class="col card py-2" id="empupdate">
+        <h3 class="text-center">Update employee</h3>
+        <form [formGroup]="empcontrol" (ngSubmit)="editEmployee(myemp)" action="">
+            <div class="form-group">
+                <input class="form-control" type="text" name="emp_id" placeholder="Employee's id" id="" formControlName="emp_id">
+                <p>You must update empolyee's id to continue</p>
+            </div>
+              
+            <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Employee's name" id="" formControlName="name">
+            </div>    
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Employee's email" id="" formControlName="email">
+            </div>
+            <div class="btn-group form-group">
+                <button data-toggle="modal" data-target="#refmodal" [disabled]="!empcontrol.valid" type="submit" class="btn btn-success">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+            <div class="form-group">
+                <button  type="button" class="btn btn-danger btn-sm">close</button>
+            </div>
+        </form>
+    </div>
+        
+
+</div>

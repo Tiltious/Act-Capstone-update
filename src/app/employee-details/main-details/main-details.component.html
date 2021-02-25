@@ -15,10 +15,23 @@
         </div>
     </div>
 </div>
+<div class="modal" id="empupdate">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <app-empupdateform #empupdate></app-empupdateform>
+        </div>
+    </div>
+</div>
 <div class="card">
     <div class="card-header">
-        <h4>{{myemployees.name}}</h4>
-        <p>email: {{myemployees.email}}<br>id: {{myemployees.emp_id}}</p>
+        <h4 data-toggle="collapse" data-target="#demo">{{myemployees.name}}</h4>
+        <div class="collapse" id="demo">
+            email: {{myemployees.email}}<br>id: {{myemployees.emp_id}}
+            <div class="card-footer">
+                <button class="btn btn-primary btn-sm"data-toggle="modal" data-target="#empupdate">Update</button>
+                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#empdelconf">Delete</button>
+            </div>
+        </div>
     </div>
     <div class="card-body">
         <ul class="list-group">
@@ -36,14 +49,18 @@
             Add New Device
         </button>
     </div>
-
 </div>
-
-
 <div class="modal" id="delconf">
     <div class="modal-dialog">
         <div class="modal-content">
             <app-delete-confirmation [deldev]="devupdate.mydev.id"></app-delete-confirmation>
+        </div>
+    </div>
+</div>
+<div class="modal" id="empdelconf">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <app-emp-delete-confirmation></app-emp-delete-confirmation>
         </div>
     </div>
 </div>

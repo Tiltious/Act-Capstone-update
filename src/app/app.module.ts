@@ -17,6 +17,8 @@ import { MainDetailsComponent } from './employee-details/main-details/main-detai
 import { DeventryformComponent } from './employee-details/main-details/deventryform/deventryform.component';
 import { DevupdateformComponent } from './employee-details/main-details/devupdateform/devupdateform.component';
 import { DeleteConfirmationComponent } from './employee-details/main-details/delete-confirmation/delete-confirmation.component';
+import { EmpDeleteConfirmationComponent } from './employee-details/main-details/emp-delete-confirmation/emp-delete-confirmation.component';
+import { EmpupdateformComponent } from './employee-details/main-details/empupdateform/empupdateform.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { DeleteConfirmationComponent } from './employee-details/main-details/del
     MainDetailsComponent,
     DeventryformComponent,
     DevupdateformComponent,
-    DeleteConfirmationComponent
+    DeleteConfirmationComponent,
+    EmpDeleteConfirmationComponent,
+    EmpupdateformComponent
   ],
   imports: [
     BrowserModule,
