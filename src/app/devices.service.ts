@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, Output,EventEmitter } from '@angular/core';
 import { DeviceAssignments } from './device-assignments';
 import { Devices } from './devices';
+import { EmployeesService } from './employees.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class DevicesService {
   @Output() selecteddev=new EventEmitter<Devices>()
   @Output() selectedassign=new EventEmitter<DeviceAssignments>()
 
-  constructor(private dhttp:HttpClient) { 
+  constructor(private dhttp:HttpClient,private employee:EmployeesService) { 
     this.getDevices()
     this.getAssignment()
   }

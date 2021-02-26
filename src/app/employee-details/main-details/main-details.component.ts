@@ -19,19 +19,19 @@ export class MainDetailsComponent implements OnInit {
     this.myemployees=this.employee.myemployees
   }
 
-  mydevices:any[]=[]
+  mydevices:any
   ngOnInit(): void {
+    this.mydevices=this.device.mydevices
     this.employee.selectedemp.subscribe((emp:Employees)=>{
       this.myemployees=emp
       this.devDisplay(this.myemployees.id)
       console.log('this.myemployees.id',this.myemployees.id)
     })
   }
-  devs:any[]=[]
   back:any[]=[]
   devDisplay(emp_id:any){
-   this.devs=this.device.devAssign(emp_id)
-   this.back=this.device.devDisplay(this.devs)
+   let devs=this.device.devAssign(emp_id)
+   this.back=this.device.devDisplay(devs)
   }
   @ViewChild(DevupdateformComponent) mydev:DevupdateformComponent
   sendDevice(dev:Devices){

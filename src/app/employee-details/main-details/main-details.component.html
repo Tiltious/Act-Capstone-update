@@ -36,10 +36,10 @@
     <div class="card-body">
         <ul class="list-group">
             <li *ngFor="let b of back" class="list-group-item text-center">
-                {{deventry.mydevices[b].description}}--{{deventry.mydevices[b].type}} <br>
+                {{mydevices[b].description}}--{{mydevices[b].type}} <br>
                 <div class="btn-group">
-                    <button (click)="sendDevice(deventry.mydevices[b])" data-toggle="modal" data-target="#devupdate" class="btn btn-primary btn-sm">Update</button>
-                    <button (click)="sendDevice(deventry.mydevices[b])" data-toggle="modal" data-target="#delconf"class="btn btn-danger btn-sm">Delete</button>
+                    <button (click)="sendDevice(mydevices[b])" data-toggle="modal" data-target="#devupdate" class="btn btn-primary btn-sm">Update</button>
+                    <button (click)="sendDevice(mydevices[b])" data-toggle="modal" data-target="#delconf"class="btn btn-danger btn-sm">Delete</button>
                 </div>
             </li>
         </ul>
