@@ -44,6 +44,7 @@ export class DevicesService {
           new Devices(data.name,value.sn,value.description,value.type)
         )
         let x={employee_id:emp.id,device_id:data.name}
+        //kapvw ena emmit gia ton employee
         this.publishAssignment(x)
       }
     )
@@ -53,7 +54,7 @@ export class DevicesService {
     this.dhttp.post('https://actcapstoneupdate-default-rtdb.firebaseio.com/DeviceAssignment.json',ass).subscribe(
       (data:any)=>{
         this.assignments.push(
-          new DeviceAssignments(data.ass_id,ass.employee_id,ass.device_id)
+          new DeviceAssignments(data.name,ass.employee_id,ass.device_id)
         )
         console.log("ok publishAssignment()")
        }
@@ -83,19 +84,18 @@ export class DevicesService {
         }),1)
       }
     )
-    this.getDevices()
   }
   editDevice(id:string,value:any){
     this.dhttp.put('https://actcapstoneupdate-default-rtdb.firebaseio.com/Devices/'+id+'.json',value)
     .subscribe((data:any)=>{
+      console.log('editdev()',data)
       this.mydevices.splice(this.mydevices.findIndex(function(device){
         return device.id===id
       }),1)
 
-      let newdev= new Devices(data.id,value.sn,value.description,value.type)
+      let newdev= new Devices(id,value.sn,value.description,value.type)
       this.mydevices.push(newdev)
       this.selecteddev.emit(newdev)
-      this.getDevices()
     })
   }
   devAssign(emp_id:any){

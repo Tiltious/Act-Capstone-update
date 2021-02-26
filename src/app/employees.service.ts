@@ -19,9 +19,9 @@ export class EmployeesService {
           console.log(employee.id)
           return employee.id===id
         }),1)
-        let newemp=new Employees(data.id,value.emp_id,value.name,value.email)
-        this.selectedemp.emit(newemp)
+        let newemp=new Employees(id,value.emp_id,value.name,value.email)
         this.myemployees.push(newemp)
+        this.selectedemp.emit(newemp)
       }
     )
   }
@@ -40,7 +40,8 @@ export class EmployeesService {
   publishEmployee(newemp:any){
     this.emphttp.post('https://actcapstoneupdate-default-rtdb.firebaseio.com/Employees.json',newemp)
     .subscribe((data:any)=>{
-      this.myemployees.push(new Employees(data.id,newemp.emp_id,newemp.name,newemp.email))
+      this.myemployees.push(new Employees(data.name,newemp.emp_id,newemp.name,newemp.email))
+      console.log(data.id,'data')
     })
   }
   getEmployees(){
