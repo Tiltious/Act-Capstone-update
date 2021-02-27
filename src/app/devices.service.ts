@@ -24,7 +24,7 @@ export class DevicesService {
         this.mydevices.push(
           new Devices(key,devices[key].sn,devices[key].description,devices[key].type)
         )}
-      this.selecteddev.emit(this.mydevices[0])
+      //this.selecteddev.emit(this.mydevices[0])
     })
   }
   getAssignment(){
@@ -35,7 +35,8 @@ export class DevicesService {
             new DeviceAssignments(key,devassignments[key].employee_id,devassignments[key].device_id)
           )
           console.log("ok getAssignment()")}
-          this.selectedassign.emit(this.assignments[0])
+          //this.selectedassign.emit(this.assignments[0])
+          this.employee.selectedemp.emit(this.employee.myemployees[0])
       })
   }
   publishDevice(value:any,emp:any){
@@ -64,11 +65,10 @@ export class DevicesService {
   deleteDevice(id:string){
     this.dhttp.delete('https://actcapstoneupdate-default-rtdb.firebaseio.com/Devices/'+id+'.json').subscribe(
       ()=>{
-          this.mydevices.splice(this.mydevices.findIndex(function(device){
-          
+          this.mydevices.splice(this.mydevices.findIndex(function(device){          
           return device.id==id
         }),1)
-        this.selecteddev.emit(this.mydevices[0])
+        //this.selecteddev.emit(this.mydevices[0])
       }
     )
     let assid=this.assignments.findIndex((ass)=>{
@@ -93,10 +93,9 @@ export class DevicesService {
       this.mydevices.splice(this.mydevices.findIndex(function(device){
         return device.id===id
       }),1)
-
       let newdev= new Devices(id,value.sn,value.description,value.type)
       this.mydevices.push(newdev)
-      this.selecteddev.emit(newdev)
+      //this.selecteddev.emit(newdev)
     })
   }
   devAssign(emp_id:any){

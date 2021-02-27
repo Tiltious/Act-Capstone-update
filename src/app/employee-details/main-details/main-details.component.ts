@@ -24,13 +24,12 @@ export class MainDetailsComponent implements OnInit {
     this.mydevices=this.device.mydevices
     this.employee.selectedemp.subscribe((emp:Employees)=>{
       this.myemployees=emp
-      this.devDisplay(this.myemployees.id)
-      console.log('this.myemployees.id',this.myemployees.id)
+      this.devDisplay(this.myemployees)
     })
   }
   back:any[]=[]
-  devDisplay(emp_id:any){
-   let devs=this.device.devAssign(emp_id)
+  devDisplay(emp:any){
+   let devs=this.device.devAssign(emp.id)
    this.back=this.device.devDisplay(devs)
   }
   @ViewChild(DevupdateformComponent) mydev:DevupdateformComponent

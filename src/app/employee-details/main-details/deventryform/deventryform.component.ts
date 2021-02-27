@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DevicesService } from 'src/app/devices.service';
+import { EmployeesService } from 'src/app/employees.service';
 import { GetValidationService } from 'src/app/get-validation.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class DeventryformComponent implements OnInit {
     type:new FormControl('',[Validators.pattern('^[0-9]*$'),Validators.required])
   })
   constructor(
+    private employee:EmployeesService,
     private devservice:DevicesService,
     private validator:GetValidationService
   ) { }
@@ -23,6 +25,7 @@ export class DeventryformComponent implements OnInit {
   addDevice(emp:any){
     this.devservice.publishDevice(this.devcontrols.value,emp)
     this.formReset()
+    console.log(emp,'empnadw')
   }
   formReset(){
     this.devcontrols.reset()
@@ -30,6 +33,8 @@ export class DeventryformComponent implements OnInit {
   mydevices:any[]=[]
   ngOnInit(): void {
     this.mydevices=this.devservice.mydevices
+    this.employee.selectedemp.emit(this.emp)
+    console.log(this.emp,'thisempnadw')
   }
 
 }
