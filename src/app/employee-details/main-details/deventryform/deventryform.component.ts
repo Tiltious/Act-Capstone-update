@@ -26,6 +26,8 @@ export class DeventryformComponent implements OnInit {
     this.devservice.publishDevice(this.devcontrols.value,emp)
     this.formReset()
     console.log(emp,'empnadw')
+    console.log(this.emp,'this2empnadw')
+    this.employee.selectedemp.emit(emp)
   }
   formReset(){
     this.devcontrols.reset()
@@ -33,8 +35,6 @@ export class DeventryformComponent implements OnInit {
   mydevices:any[]=[]
   ngOnInit(): void {
     this.mydevices=this.devservice.mydevices
-    this.employee.selectedemp.emit(this.emp)
-    console.log(this.emp,'thisempnadw')
   }
 
 }

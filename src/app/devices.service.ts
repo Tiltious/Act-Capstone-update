@@ -23,7 +23,8 @@ export class DevicesService {
       for(let key in devices){
         this.mydevices.push(
           new Devices(key,devices[key].sn,devices[key].description,devices[key].type)
-        )}
+        )
+        console.log("ok getDevice()")}
       //this.selecteddev.emit(this.mydevices[0])
     })
   }
@@ -47,19 +48,20 @@ export class DevicesService {
         )
         let x={employee_id:emp.id,device_id:data.name}
         //kapvw ena emmit gia ton employee
-        this.publishAssignment(x)
+        this.publishAssignment(x,emp)
       }
     )
     console.log("ok publishDevice()")
   }
-  publishAssignment(ass:any){
+  publishAssignment(ass:any,emp:any){
     this.dhttp.post('https://actcapstoneupdate-default-rtdb.firebaseio.com/DeviceAssignment.json',ass).subscribe(
       (data:any)=>{
         this.assignments.push(
           new DeviceAssignments(data.name,ass.employee_id,ass.device_id)
         )
         console.log("ok publishAssignment()")
-       }
+        this.employee.selectedemp.emit(emp)
+      }
     )
   }
   deleteDevice(id:string){

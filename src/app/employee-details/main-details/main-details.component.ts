@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, ViewChild, EventEmitter} from '@angular/core';
 import { Devices } from 'src/app/devices';
 import { DevicesService } from 'src/app/devices.service';
 import { Employees } from 'src/app/employees';
