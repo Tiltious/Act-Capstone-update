@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DevicesService } from 'src/app/devices.service';
+import { EmployeesService } from 'src/app/employees.service';
 
 @Component({
   selector: 'app-delete-confirmation',
@@ -8,7 +9,9 @@ import { DevicesService } from 'src/app/devices.service';
 })
 export class DeleteConfirmationComponent implements OnInit {
   @Input()deldev:any
-  constructor(private device:DevicesService) { }
+  constructor(
+    private employee:EmployeesService,
+    private device:DevicesService) { }
 
   ngOnInit(): void {
   }
@@ -18,5 +21,4 @@ export class DeleteConfirmationComponent implements OnInit {
     console.log(id)
     alert('device removed')
   }
-
 }

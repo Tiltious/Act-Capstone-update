@@ -73,12 +73,12 @@ export class DevicesService {
         //this.selecteddev.emit(this.mydevices[0])
       }
     )
-    let assid=this.assignments.findIndex((ass)=>{
+    let asskey=this.assignments.findIndex((ass)=>{
       return ass.device_id==id
     })
-    this.deleteAssignment(this.assignments[assid].ass_id)
+    this.deleteAssignment(this.assignments[asskey].ass_id,this.assignments[asskey].employee_id)
   }
-  deleteAssignment(assid:string){
+  deleteAssignment(assid:string,empid){
     console.log(assid)
     this.dhttp.delete('https://actcapstoneupdate-default-rtdb.firebaseio.com/DeviceAssignment/'+assid+'.json').subscribe(
       ()=>{
