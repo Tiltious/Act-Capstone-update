@@ -29,8 +29,8 @@ export class MainDetailsComponent implements OnInit {
   }
   back:any[]=[]
   devDisplay(emp:any){
-   let devs=this.device.devAssign(emp.id)
-   this.back=this.device.devDisplay(devs)
+   let ass=this.device.devAssign(emp.id)
+   this.back=this.device.devDisplay(ass)
   }
   @ViewChild(DevupdateformComponent) mydev:DevupdateformComponent
   sendDevice(dev:Devices){

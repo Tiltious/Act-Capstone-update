@@ -11,9 +11,10 @@ export class SideBarComponent implements OnInit {
   
   myemployees:any
   constructor(private employee:EmployeesService) { }
-
+  active:boolean
   sendemployee(employee:Employees){
     this.employee.selectedemp.emit(employee)
+    this.active=true
   }
   ngOnInit(): void {
     console.log('sideoninit')

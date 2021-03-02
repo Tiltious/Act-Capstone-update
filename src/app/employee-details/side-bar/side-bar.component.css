@@ -6,9 +6,16 @@
 }
 .vertical-menu li:hover{
     cursor: pointer;
-    text-shadow: -1px 2px 2px   rgb(38, 65, 65);
+    text-shadow: -1px 2px 2px   rgb(19, 32, 32);
+    background-color: rgba(148, 245, 245, 0);
 }
 h3{
     color: seashell;
     font-weight: bold;
+}
+.vertical-menu li:active{
+    text-shadow: -1px 2px 2px   rgb(19, 32, 32);
+    background-color: rgba(148, 245, 245, 0);
+    border-right-color: rgba(148, 245, 245, 0);
+    
 }

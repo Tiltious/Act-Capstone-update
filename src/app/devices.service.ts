@@ -67,10 +67,15 @@ export class DevicesService {
   deleteDevice(id:string){
     this.dhttp.delete('https://actcapstoneupdate-default-rtdb.firebaseio.com/Devices/'+id+'.json').subscribe(
       ()=>{
-          this.mydevices.splice(this.mydevices.findIndex(function(device){          
-          return device.id==id
-        }),1)
+          let x = this.mydevices.findIndex(function(device){          
+            return device.id==id
+          })
+          this.mydevices.splice(x,1)
+          this.back.splice(this.back.findIndex((b)=>{
+            return b==x
+          }),1)
         //this.selecteddev.emit(this.mydevices[0])
+        console.log(this.back,'deleteback')
       }
     )
     let asskey=this.assignments.findIndex((ass)=>{
@@ -108,16 +113,17 @@ export class DevicesService {
     )
     return assq
   }
-  devDisplay(devs:any){
-    let back:any[]=[]
-    for(let key of devs){
+  back:any[]
+  devDisplay(assq:any){
+    this.back=[]
+    for(let key of assq){
       let devq=this.mydevices.findIndex(
         (dev:any)=>{
           return key.device_id===dev.id
       })
-      back.push(devq)
+      this.back.push(devq)
     }
-    return back  
+    return this.back  
   }
 
 }
