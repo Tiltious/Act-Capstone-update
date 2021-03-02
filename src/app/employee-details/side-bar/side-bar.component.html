@@ -1,5 +1,5 @@
 <h3 class="text-center p-2">Employees List</h3>
-<div class="vertical-menu" id="sidebar">
+<div class="vertical-menu m-2" id="sidebar">
     <ul class="list-group">
         <li *ngFor="let emp of myemployees" (click)="sendemployee(emp)" class="list-group-item">
             {{emp.name}}

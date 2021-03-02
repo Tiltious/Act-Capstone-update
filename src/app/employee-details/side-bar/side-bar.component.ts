@@ -14,7 +14,6 @@ export class SideBarComponent implements OnInit {
   active:boolean
   sendemployee(employee:Employees){
     this.employee.selectedemp.emit(employee)
-    this.active=true
   }
   ngOnInit(): void {
     console.log('sideoninit')

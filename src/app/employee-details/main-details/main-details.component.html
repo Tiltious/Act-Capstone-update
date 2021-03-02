@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<div class="card">
+<div class="card m-2">
     <div class="card-header">
         <h4 data-toggle="collapse" data-target="#demo">{{myemployees.name}}</h4>
         <div class="collapse" id="demo">
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="card-body">
-        <ul class="list-group">
+        <ul class="list-group" id="devdisplay">
             <li *ngFor="let b of back" class="list-group-item text-center">
                 {{mydevices[b].description}}--{{mydevices[b].type}} <br>
                 <div class="btn-group">
