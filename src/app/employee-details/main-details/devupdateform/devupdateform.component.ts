@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Devices } from 'src/app/devices';
 import { DevicesService } from 'src/app/devices.service';
@@ -10,7 +10,7 @@ import { GetValidationService } from 'src/app/get-validation.service';
   styleUrls: ['./devupdateform.component.css']
 })
 export class DevupdateformComponent implements OnInit {
-
+  @Input() emp:any
   constructor(
     private device:DevicesService,
     private validator:GetValidationService
@@ -29,7 +29,7 @@ export class DevupdateformComponent implements OnInit {
     })
   }
   editDevice(device:Devices){
-    this.device.editDevice(device.id,this.devcontrol.value)
+    this.device.editDevice(device.id,this.devcontrol.value,this.emp)
     alert('Update Complete')
   }
   formReset(){

@@ -11,7 +11,7 @@
 <div class="modal" id="devupdate">
     <div class="modal-dialog">
         <div class="modal-content">
-            <app-devupdateform #devupdate></app-devupdateform>
+            <app-devupdateform #devupdate [emp]="myemployees"></app-devupdateform>
         </div>
     </div>
 </div>
@@ -60,7 +60,7 @@
 <div class="modal" id="empdelconf">
     <div class="modal-dialog">
         <div class="modal-content">
-            <app-emp-delete-confirmation></app-emp-delete-confirmation>
+            <app-emp-delete-confirmation [emp]="myemployees"></app-emp-delete-confirmation>
         </div>
     </div>
 </div>

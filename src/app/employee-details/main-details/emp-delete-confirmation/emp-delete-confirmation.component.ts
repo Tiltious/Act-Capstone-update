@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DevicesService } from 'src/app/devices.service';
 import { EmployeesService } from 'src/app/employees.service';
 
@@ -8,7 +8,7 @@ import { EmployeesService } from 'src/app/employees.service';
   styleUrls: ['./emp-delete-confirmation.component.css']
 })
 export class EmpDeleteConfirmationComponent implements OnInit {
-
+  @Input() emp:any
   constructor(
     private empdetails:EmployeesService,
     private devservice:DevicesService) { }
@@ -24,11 +24,9 @@ export class EmpDeleteConfirmationComponent implements OnInit {
       }
     )
     for(let del of fordelete){
-      console.log(del.device_id,'dev---id')
       this.devservice.deleteDevice(del.device_id)
     }
     this.empdetails.deleteEmployee(id)
-    console.log(fordelete,'foredelete')
     alert('Employee delete')
   }
 

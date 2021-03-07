@@ -93,7 +93,7 @@ export class DevicesService {
       }
     )
   }
-  editDevice(id:string,value:any){
+  editDevice(id:string,value:any,emp:any){
     this.dhttp.put('https://actcapstoneupdate-default-rtdb.firebaseio.com/Devices/'+id+'.json',value)
     .subscribe((data:any)=>{
       console.log('editdev()',data)
@@ -103,6 +103,7 @@ export class DevicesService {
       let newdev= new Devices(id,value.sn,value.description,value.type)
       this.mydevices.push(newdev)
       //this.selecteddev.emit(newdev)
+      this.employee.selectedemp.emit(emp)
     })
   }
   devAssign(emp_id:any){
